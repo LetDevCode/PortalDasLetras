@@ -1,43 +1,10 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+{% extends "base.html" %}
 
-<head>
+{% block title %}
+Contato
+{% endblock %}
 
-<meta charset="UTF-8">
-
-<title>Contato</title>
-
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-</head>
-
-<body>
-
-<header>
-
-<h1>📚 Portal das Letras</h1>
-
-</header>
-
-<nav>
-
-<a href="/">Home</a>
-
-<a href="/produtos">Livros</a>
-
-<a href="/sobre">Sobre</a>
-
-<a href="/contato">Contato</a>
-
-<a href="/login">Login</a>
-
-<a href="/cadastro">Cadastro</a>
-
-<a href="/admin">Admin</a>
-
-</nav>
-
-<div class="container">
+{% block content %}
 
 <h2>Contato</h2>
 
@@ -47,14 +14,4 @@
 
 <p>📍 Brasília - DF</p>
 
-</div>
-
-<footer>
-
-© 2026 Portal das Letras
-
-</footer>
-
-</body>
-
-</html>
+{% endblock %}

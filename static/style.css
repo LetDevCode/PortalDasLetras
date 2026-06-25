@@ -167,3 +167,33 @@ footer{
     text-align:center;
     padding:18px;
 }
+
+.slogan{
+    margin-top:8px;
+    font-size:18px;
+    font-style:italic;
+    color:white;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    padding:8px 12px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+nav a:hover{
+    background:white;
+    color:#f38f00;
+}
+
+footer p{
+    margin:5px;
+}
