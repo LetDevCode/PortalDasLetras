@@ -1,18 +1,108 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Painel Administrativo</title>
+<meta charset="UTF-8">
+<title>Painel Administrativo</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-    <h1>Painel Administrativo</h1>
+<header>
 
-    <ul>
-        <li><a href="/cadastrar_livro">Cadastrar Livro</a></li>
-        <li><a href="/editar_livro">Editar Livro</a></li>
-        <li><a href="/excluir_livro">Excluir Livro</a></li>
-        <li><a href="/pesquisar_livro">Pesquisar Livro</a></li>
-    </ul>
+<h1>📚 Portal das Letras</h1>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/produtos">Livros</a>
+
+<a href="/sobre">Sobre</a>
+
+<a href="/contato">Contato</a>
+
+<a href="/login">Login</a>
+
+<a href="/cadastro">Cadastro</a>
+
+<a href="/admin">Admin</a>
+
+</nav>
+
+<div class="container">
+
+<h2>Painel Administrativo</h2>
+
+<div class="acoes">
+
+<a href="/cadastrar_livro">
+<button>➕ Cadastrar Livro</button>
+</a>
+
+<a href="/pesquisar_livro">
+<button>🔍 Pesquisar Livro</button>
+</a>
+
+</div>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Título</th>
+
+<th>Autor</th>
+
+<th>Preço</th>
+
+<th>Ações</th>
+
+</tr>
+
+{% for livro in livros %}
+
+<tr>
+
+<td>{{ livro.id }}</td>
+
+<td>{{ livro.titulo }}</td>
+
+<td>{{ livro.autor }}</td>
+
+<td>R$ {{ livro.preco }}</td>
+
+<td>
+
+<a href="/editar_livro/{{ livro.id }}">
+<button>✏️ Editar</button>
+</a>
+
+<a href="/excluir_livro/{{ livro.id }}">
+<button>🗑️ Excluir</button>
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<footer>
+
+© 2026 Portal das Letras
+
+</footer>
 
 </body>
 </html>

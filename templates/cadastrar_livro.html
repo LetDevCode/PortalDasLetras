@@ -1,28 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Cadastrar Livro</title>
+<meta charset="UTF-8">
+
+<title>Cadastrar Livro</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-<h1>Cadastrar Livro</h1>
+<header>
+
+<h1>📚 Portal das Letras</h1>
+
+</header>
+
+<nav>
+
+<a href="/">Home</a>
+
+<a href="/produtos">Livros</a>
+
+<a href="/admin">Admin</a>
+
+</nav>
+
+<div class="container">
+
+<h2>Cadastrar Livro</h2>
 
 <form method="POST">
 
-    <label>Título</label><br>
-    <input type="text" name="titulo" required><br><br>
+<input
+type="text"
+name="titulo"
+placeholder="Título"
+required>
 
-    <label>Autor</label><br>
-    <input type="text" name="autor" required><br><br>
+<input
+type="text"
+name="autor"
+placeholder="Autor"
+required>
 
-    <label>Preço</label><br>
-    <input type="text" name="preco" required><br><br>
+<input
+type="text"
+name="preco"
+placeholder="Preço"
+required>
 
-    <button type="submit">
-        Salvar
-    </button>
+<button type="submit">
+
+Salvar Livro
+
+</button>
 
 </form>
+
+</div>
+
+<footer>
+
+© 2026 Portal das Letras
+
+</footer>
 
 </body>
 </html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>Portal das Letras</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -9,41 +10,72 @@
 
 <header>
     <h1>📚 Portal das Letras</h1>
+    <p>Sua livraria online</p>
 </header>
 
 <nav>
-     <a href="/">Home</a>
-     <a href="/produtos">Livros</a>
-     <a href="/sobre">Sobre</a>
-     <a href="/contato">Contato</a>
-     <a href="/login">Login</a>
+    <a href="/">Home</a>
+    <a href="/produtos">Livros</a>
+    <a href="/sobre">Sobre</a>
+    <a href="/contato">Contato</a>
+    <a href="/login">Login</a>
+    <a href="/cadastro">Cadastro</a>
+    <a href="/admin">Admin</a>
 </nav>
 
 <div class="container">
 
-<h2>Livros em Destaque</h2>
+<h2>Bem-vindo ao Portal das Letras</h2>
+
+<p style="text-align:center;font-size:18px;">
+Encontre os melhores livros de literatura,
+fantasia, romance, tecnologia e muito mais.
+</p>
+
+<br>
 
 <div class="cards">
 
 <div class="card">
+
 <img src="https://m.media-amazon.com/images/I/81iqZ2HHD-L.jpg">
+
 <h3>Dom Casmurro</h3>
-<p>R$ 39,90</p>
+
+<p>Machado de Assis</p>
+
+<p>R$39,90</p>
+
 <button>Comprar</button>
+
 </div>
 
 <div class="card">
+
 <img src="https://m.media-amazon.com/images/I/81hCVEC0ExL.jpg">
+
 <h3>O Pequeno Príncipe</h3>
-<p>R$ 29,90</p>
+
+<p>Antoine de Saint-Exupéry</p>
+
+<p>R$29,90</p>
+
 <button>Comprar</button>
+
 </div>
 
 <div class="card">
+
 <img src="https://m.media-amazon.com/images/I/91SZSW8qSsL.jpg">
+
 <h3>Harry Potter</h3>
-<p>R$ 59,90</p>
+
+<p>J.K. Rowling</p>
+
+<p>R$59,90</p>
+
 <button>Comprar</button>
+
 </div>
 
 </div>
@@ -51,7 +83,9 @@
 </div>
 
 <footer>
-© 2026 Livraria Online
+
+© 2026 Portal das Letras
+
 </footer>
 
 </body>

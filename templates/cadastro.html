@@ -1,22 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>Cadastro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Cadastro de Usuário</h1>
 
-    <form>
-        <label>Nome:</label><br>
-        <input type="text"><br><br>
+<header>
+    <h1>📚 Portal das Letras</h1>
+</header>
 
-        <label>Email:</label><br>
-        <input type="email"><br><br>
+<nav>
+    <a href="/">Home</a>
+    <a href="/produtos">Livros</a>
+    <a href="/sobre">Sobre</a>
+    <a href="/contato">Contato</a>
+    <a href="/login">Login</a>
+    <a href="/cadastro">Cadastro</a>
+    <a href="/admin">Admin</a>
+</nav>
 
-        <label>Senha:</label><br>
-        <input type="password"><br><br>
+<div class="container">
 
-        <button type="submit">Cadastrar</button>
-    </form>
+<h2>Cadastro</h2>
+
+<form>
+
+<input type="text" placeholder="Nome">
+
+<input type="email" placeholder="Email">
+
+<input type="password" placeholder="Senha">
+
+<button type="submit">Cadastrar</button>
+
+</form>
+
+</div>
+
+<footer>
+© 2026 Portal das Letras
+</footer>
+
 </body>
 </html>

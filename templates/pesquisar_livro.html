@@ -1,22 +1,94 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
 <head>
-    <title>Pesquisar Livro</title>
+
+<meta charset="UTF-8">
+
+<title>Pesquisar Livro</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
 </head>
+
 <body>
 
-    <h1>Pesquisar Livro</h1>
+<header>
 
-    <form>
-        <input type="text" placeholder="Digite o nome do livro">
-        <button type="submit">Pesquisar</button>
-    </form>
+<h1>📚 Portal das Letras</h1>
 
-    <hr>
+</header>
 
-    <h3>Resultado da Pesquisa</h3>
+<nav>
 
-    <p>Livro encontrado aparecerá aqui.</p>
+<a href="/">Home</a>
+
+<a href="/produtos">Livros</a>
+
+<a href="/admin">Admin</a>
+
+</nav>
+
+<div class="container">
+
+<h2>Pesquisar Livro</h2>
+
+<form method="POST">
+
+<input
+type="text"
+name="busca"
+placeholder="Digite o título do livro">
+
+<button type="submit">
+
+Pesquisar
+
+</button>
+
+</form>
+
+<br>
+
+<table>
+
+<tr>
+
+<th>ID</th>
+
+<th>Título</th>
+
+<th>Autor</th>
+
+<th>Preço</th>
+
+</tr>
+
+{% for livro in resultado %}
+
+<tr>
+
+<td>{{ livro.id }}</td>
+
+<td>{{ livro.titulo }}</td>
+
+<td>{{ livro.autor }}</td>
+
+<td>R$ {{ livro.preco }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<footer>
+
+© 2026 Portal das Letras
+
+</footer>
 
 </body>
 </html>

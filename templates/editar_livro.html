@@ -1,26 +1,66 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
+    <meta charset="UTF-8">
     <title>Editar Livro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
-    <h1>Editar Livro</h1>
+<header>
+    <h1>📚 Portal das Letras</h1>
+</header>
 
-    <form>
-        <label>ID do Livro:</label><br>
-        <input type="number"><br><br>
+<nav>
+    <a href="/">Home</a>
+    <a href="/produtos">Livros</a>
+    <a href="/sobre">Sobre</a>
+    <a href="/contato">Contato</a>
+    <a href="/login">Login</a>
+    <a href="/cadastro">Cadastro</a>
+    <a href="/admin">Admin</a>
+</nav>
 
-        <label>Novo Título:</label><br>
-        <input type="text"><br><br>
+<div class="container">
 
-        <label>Novo Preço:</label><br>
-        <input type="number"><br><br>
+<h2>Editar Livro</h2>
 
-        <button type="submit">
-            Atualizar
-        </button>
-    </form>
+<form method="POST">
+
+<label>Título</label>
+<input
+type="text"
+name="titulo"
+value="{{ livro.titulo }}"
+required>
+
+<label>Autor</label>
+<input
+type="text"
+name="autor"
+value="{{ livro.autor }}"
+required>
+
+<label>Preço</label>
+<input
+type="text"
+name="preco"
+value="{{ livro.preco }}"
+required>
+
+<br><br>
+
+<button type="submit">
+Salvar Alterações
+</button>
+
+</form>
+
+</div>
+
+<footer>
+© 2026 Portal das Letras
+</footer>
 
 </body>
 </html>

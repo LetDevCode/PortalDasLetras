@@ -2,7 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Livros - Portal das Letras</title>
+    <title>Livros</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
@@ -18,42 +18,55 @@
     <a href="/contato">Contato</a>
     <a href="/login">Login</a>
     <a href="/cadastro">Cadastro</a>
+    <a href="/admin">Admin</a>
 </nav>
 
 <div class="container">
 
-    <h2>Catálogo de Livros</h2>
+<h2>Catálogo de Livros</h2>
 
-    <p>
-        <a href="/cadastrar_livro">
-            <button>➕ Cadastrar Novo Livro</button>
-        </a>
-    </p>
+<div class="acoes">
 
-    <table border="1" width="100%" cellpadding="10">
+<a href="/cadastrar_livro">
+<button>➕ Novo Livro</button>
+</a>
 
-        <tr>
-            <th>ID</th>
-            <th>Título</th>
-            <th>Autor</th>
-            <th>Preço</th>
-        </tr>
+<a href="/pesquisar_livro">
+<button>🔍 Pesquisar</button>
+</a>
 
-        {% for livro in livros %}
-        <tr>
-            <td>{{ livro.id }}</td>
-            <td>{{ livro.titulo }}</td>
-            <td>{{ livro.autor }}</td>
-            <td>R$ {{ livro.preco }}</td>
-        </tr>
-        {% endfor %}
+</div>
 
-    </table>
+<table>
+
+<tr>
+<th>ID</th>
+<th>Título</th>
+<th>Autor</th>
+<th>Preço</th>
+</tr>
+
+{% for livro in livros %}
+
+<tr>
+
+<td>{{ livro.id }}</td>
+<td>{{ livro.titulo }}</td>
+<td>{{ livro.autor }}</td>
+<td>R$ {{ livro.preco }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
 
 </div>
 
 <footer>
-    © 2026 Portal das Letras
+
+© 2026 Portal das Letras
+
 </footer>
 
 </body>
