@@ -197,3 +197,73 @@ nav a:hover{
 footer p{
     margin:5px;
 }
+
+
+/* Banner */
+
+.banner{
+    background: linear-gradient(135deg,#3e77b6,#5a9be6);
+    color:white;
+    padding:50px;
+    border-radius:20px;
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.banner h2{
+    color:white;
+    font-size:40px;
+}
+
+.banner p{
+    font-size:20px;
+}
+
+.banner button{
+    margin-top:20px;
+    font-size:18px;
+}
+
+/* Pesquisa */
+
+.pesquisa{
+    margin:40px auto;
+    text-align:center;
+}
+
+.pesquisa input{
+    width:60%;
+    max-width:500px;
+}
+
+/* Categorias */
+
+.categorias{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin:40px 0;
+}
+
+.categoria{
+    background:white;
+    padding:20px;
+    border-radius:15px;
+    width:170px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+    transition:.3s;
+}
+
+.categoria:hover{
+    transform:translateY(-5px);
+}
+
+/* Destaques */
+
+.titulo-secao{
+    text-align:center;
+    color:#3e77b6;
+    margin:40px 0 20px;
+}
