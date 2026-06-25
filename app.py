@@ -1,7 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
-
+livros = [
+    {
+        "id": 1,
+        "titulo": "Dom Casmurro",
+        "autor": "Machado de Assis",
+        "preco": "39.90"
+    }
+]
 # Páginas públicas
 
 @app.route("/")
@@ -18,7 +25,7 @@ def contato():
 
 @app.route("/produtos")
 def produtos():
-    return render_template("produtos.html")
+    return render_template("produtos.html", livros=livros)
 
 # Login e cadastro
 
@@ -36,8 +43,22 @@ def cadastro():
 def admin():
     return render_template("admin.html")
 
-@app.route("/cadastrar_livro")
+@app.route("/cadastrar_livro", methods=["GET", "POST"])
 def cadastrar_livro():
+
+    if request.method == "POST":
+
+        novo_livro = {
+            "id": len(livros) + 1,
+            "titulo": request.form["titulo"],
+            "autor": request.form["autor"],
+            "preco": request.form["preco"]
+        }
+
+        livros.append(novo_livro)
+
+        return redirect(url_for("produtos"))
+
     return render_template("cadastrar_livro.html")
 
 @app.route("/editar_livro")

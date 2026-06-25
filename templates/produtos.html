@@ -1,44 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>Livros</title>
+    <meta charset="UTF-8">
+    <title>Livros - Portal das Letras</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
+<header>
     <h1>📚 Portal das Letras</h1>
+</header>
 
-    <nav>
-        <a href="/">Home</a>
-        <a href="/produtos">Livros</a>
-        <a href="/sobre">Sobre</a>
-        <a href="/contato">Contato</a>
-        <a href="/login">Login</a>
-    </nav>
+<nav>
+    <a href="/">Home</a>
+    <a href="/produtos">Livros</a>
+    <a href="/sobre">Sobre</a>
+    <a href="/contato">Contato</a>
+    <a href="/login">Login</a>
+    <a href="/cadastro">Cadastro</a>
+</nav>
 
-    <h2>Nossos Livros</h2>
+<div class="container">
 
-    <div class="livros">
+    <h2>Catálogo de Livros</h2>
 
-        <div class="card">
-            <h3>Dom Casmurro</h3>
-            <p>Machado de Assis</p>
-            <p>R$ 39,90</p>
-        </div>
+    <p>
+        <a href="/cadastrar_livro">
+            <button>➕ Cadastrar Novo Livro</button>
+        </a>
+    </p>
 
-        <div class="card">
-            <h3>O Pequeno Príncipe</h3>
-            <p>Antoine de Saint-Exupéry</p>
-            <p>R$ 29,90</p>
-        </div>
+    <table border="1" width="100%" cellpadding="10">
 
-        <div class="card">
-            <h3>Harry Potter</h3>
-            <p>J. K. Rowling</p>
-            <p>R$ 59,90</p>
-        </div>
+        <tr>
+            <th>ID</th>
+            <th>Título</th>
+            <th>Autor</th>
+            <th>Preço</th>
+        </tr>
 
-    </div>
+        {% for livro in livros %}
+        <tr>
+            <td>{{ livro.id }}</td>
+            <td>{{ livro.titulo }}</td>
+            <td>{{ livro.autor }}</td>
+            <td>R$ {{ livro.preco }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+
+<footer>
+    © 2026 Portal das Letras
+</footer>
 
 </body>
 </html>
