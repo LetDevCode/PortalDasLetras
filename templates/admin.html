@@ -1,16 +1,18 @@
 {% extends "base.html" %}
 
 {% block title %}
-Administração
+Painel Administrativo
 {% endblock %}
 
 {% block content %}
 
-<h2>⚙ Painel Administrativo</h2>
+<h2>⚙️ Painel Administrativo</h2>
 
-<p style="text-align:center;">
+<p style="text-align:center; font-size:22px;">
     Bem-vindo, <strong>{{ usuario }}</strong> 👋
 </p>
+
+<!-- DASHBOARD -->
 
 <div class="dashboard-cards">
 
@@ -26,15 +28,27 @@ Administração
 
     <div class="dashboard-card">
         <h3>⭐ Livro Mais Caro</h3>
-        <p>
+
+        <p style="font-size:20px;">
             {% if livro_caro %}
                 {{ livro_caro.titulo }}
+            {% else %}
+                Nenhum
             {% endif %}
         </p>
     </div>
 
 </div>
-<br>
+
+<!-- GRÁFICO -->
+
+<h2>📊 Estatísticas do Sistema</h2>
+
+<div class="dashboard-card" style="width:700px; margin:30px auto;">
+    <canvas id="graficoLivros"></canvas>
+</div>
+
+<!-- BOTÕES -->
 
 <div class="acoes">
 
@@ -51,6 +65,8 @@ Administração
     </a>
 
 </div>
+
+<!-- TABELA -->
 
 <table>
 
@@ -92,5 +108,71 @@ Administração
     {% endfor %}
 
 </table>
+
+<script>
+
+setTimeout(function() {
+
+    console.log("Chart:", typeof Chart);
+
+    const canvas = document.getElementById("graficoLivros");
+
+    console.log("Canvas:", canvas);
+
+    if (!canvas) {
+        console.error("Canvas não encontrado");
+        return;
+    }
+
+    const total = Number("{{ total }}");
+    const valorMedio = Number("{{ valor_medio }}");
+
+    new Chart(canvas, {
+
+        type: "bar",
+
+        data: {
+            labels: [
+                "Total de Livros",
+                "Preço Médio"
+            ],
+
+            datasets: [{
+                label: "Estatísticas",
+
+                data: [
+                    total,
+                    valorMedio
+                ],
+
+                backgroundColor: [
+                    "#3e77b6",
+                    "#f38f00"
+                ],
+
+                borderWidth: 1
+            }]
+        },
+
+        options: {
+            responsive: true,
+
+            plugins: {
+                legend: {
+                    display: false
+                }
+            },
+
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+}, 500);
+
+</script>
 
 {% endblock %}

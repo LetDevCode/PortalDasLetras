@@ -1,76 +1,103 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Portal das Letras{% endblock %}</title>
+    <title>
+        {% block title %}
+            Portal das Letras
+        {% endblock %}
+    </title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-<header>
+    <!-- CABEÇALHO -->
 
-    <h1>📚 Portal das Letras</h1>
+    <header>
 
-    <p class="slogan">
-        Onde cada página abre um novo mundo.
-    </p>
+        <h1>📚 Portal das Letras</h1>
 
-</header>
+        <p class="slogan">
+            Onde cada página abre um novo mundo.
+        </p>
 
-<nav>
+    </header>
 
-    <a href="/">Home</a>
-    <a href="/produtos">Livros</a>
-    <a href="/sobre">Sobre</a>
-    <a href="/contato">Contato</a>
+    <!-- MENU -->
+
+    <nav>
+
+        <a href="/">Home</a>
+
+        <a href="/produtos">Livros</a>
+
+        <a href="/sobre">Sobre</a>
+
+        <a href="/contato">Contato</a>
+
+        {% if "usuario" in session %}
+
+            <a href="/admin">Painel</a>
+
+            <a href="/logout">Sair</a>
+
+        {% else %}
+
+            <a href="/login">Login</a>
+
+            <a href="/cadastro">Cadastro</a>
+
+        {% endif %}
+
+    </nav>
+
+    <!-- USUÁRIO LOGADO -->
 
     {% if "usuario" in session %}
 
-        <a href="/admin">Painel</a>
-        <a href="/logout">Sair</a>
-
-    {% else %}
-
-        <a href="/login">Login</a>
-        <a href="/cadastro">Cadastro</a>
+    <div class="usuario-logado">
+        👤 {{ session["usuario"] }}
+    </div>
 
     {% endif %}
 
-</nav>
+    <!-- CONTEÚDO -->
 
-{% if "usuario" in session %}
+    <div class="container">
 
-<div class="usuario-logado">
-    👤 {{ session["usuario"] }}
-</div>
+        {% block content %}
 
-{% endif %}
+        {% endblock %}
 
-<div class="container">
+    </div>
 
-{% block content %}
+    <!-- RODAPÉ -->
 
-{% endblock %}
+    <footer>
 
-</div>
+    <p>📚 Portal das Letras</p>
 
-<footer>
+    <p>
+        Conhecimento ao alcance de um clique.
+    </p>
 
-<p>📚 Portal das Letras</p>
-
-<p>
-Conhecimento ao alcance de um clique.
-</p>
-
-<p>
-© 2026 Todos os direitos reservados.
-</p>
+    <p>
+        © 2026 Todos os direitos reservados.
+    </p>
 
 </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+
+<script>
+    console.log("Chart carregado:", typeof Chart);
+</script>
 
 </body>
 </html>
