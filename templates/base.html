@@ -23,21 +23,32 @@
 
 <nav>
 
-    <a href="/">🏠 Home</a>
+    <a href="/">Home</a>
+    <a href="/produtos">Livros</a>
+    <a href="/sobre">Sobre</a>
+    <a href="/contato">Contato</a>
 
-    <a href="/produtos">📚 Livros</a>
+    {% if "usuario" in session %}
 
-    <a href="/sobre">ℹ️ Sobre</a>
+        <a href="/admin">Painel</a>
+        <a href="/logout">Sair</a>
 
-    <a href="/contato">📞 Contato</a>
+    {% else %}
 
-    <a href="/login">👤 Login</a>
+        <a href="/login">Login</a>
+        <a href="/cadastro">Cadastro</a>
 
-    <a href="/cadastro">📝 Cadastro</a>
-
-    <a href="/admin">⚙️ Administração</a>
+    {% endif %}
 
 </nav>
+
+{% if "usuario" in session %}
+
+<div class="usuario-logado">
+    👤 {{ session["usuario"] }}
+</div>
+
+{% endif %}
 
 <div class="container">
 

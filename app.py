@@ -81,7 +81,28 @@ def admin():
     if "usuario" not in session:
         return redirect(url_for("login"))
 
-    return render_template("admin.html", usuario=session["usuario"], livros=livros)
+    total = len(livros)
+
+    valor_total = sum(float(livro["preco"]) for livro in livros)
+
+    valor_medio = valor_total / total if total > 0 else 0
+
+    livro_caro = None
+
+    if livros:
+        livro_caro = max(
+            livros,
+            key=lambda livro: float(livro["preco"])
+        )
+
+    return render_template(
+        "admin.html",
+        usuario=session["usuario"],
+        livros=livros,
+        total=total,
+        valor_medio=valor_medio,
+        livro_caro=livro_caro
+    )
 
 
 # =========================
