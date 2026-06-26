@@ -4,7 +4,9 @@ body{
     background:#bfddf3;
 }
 
-/* Cabeçalho */
+/* =========================
+   HEADER
+========================= */
 
 header{
     background:#3e77b6;
@@ -17,12 +19,20 @@ header h1{
     margin:0;
 }
 
-/* Menu */
+/* =========================
+   MENU
+========================= */
 
 nav{
     background:#f38f00;
     padding:15px;
     text-align:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
 nav a{
@@ -31,13 +41,18 @@ nav a{
     margin:0 18px;
     font-weight:bold;
     transition:.3s;
+    padding:8px 12px;
+    border-radius:8px;
 }
 
 nav a:hover{
-    color:#5a2d00;
+    background:white;
+    color:#f38f00;
 }
 
-/* Conteúdo */
+/* =========================
+   CONTEÚDO
+========================= */
 
 .container{
     width:85%;
@@ -51,7 +66,9 @@ h2{
     text-align:center;
 }
 
-/* Cards */
+/* =========================
+   CARDS HOME
+========================= */
 
 .cards{
     display:flex;
@@ -84,7 +101,9 @@ h2{
     font-weight:bold;
 }
 
-/* Botões */
+/* =========================
+   BOTÕES
+========================= */
 
 button{
     background:#f38f00;
@@ -100,27 +119,18 @@ button:hover{
     background:#ffa12b;
 }
 
-/* Formulários */
+/* =========================
+   FORMULÁRIOS (CORRIGIDO)
+   SEM CONFLITO COM LOGIN
+========================= */
 
 form{
-    background:white;
-    width:450px;
-    margin:auto;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-}
-
-input{
     width:100%;
-    padding:12px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-    box-sizing:border-box;
 }
 
-/* Tabelas */
+/* =========================
+   TABELAS
+========================= */
 
 table{
     width:100%;
@@ -148,7 +158,9 @@ tr:hover{
     background:#ffe0b3;
 }
 
-/* Área de botões do admin */
+/* =========================
+   ADMIN
+========================= */
 
 .acoes{
     display:flex;
@@ -158,7 +170,9 @@ tr:hover{
     flex-wrap:wrap;
 }
 
-/* Rodapé */
+/* =========================
+   FOOTER
+========================= */
 
 footer{
     margin-top:40px;
@@ -168,6 +182,14 @@ footer{
     padding:18px;
 }
 
+footer p{
+    margin:5px;
+}
+
+/* =========================
+   SLOGAN
+========================= */
+
 .slogan{
     margin-top:8px;
     font-size:18px;
@@ -175,31 +197,9 @@ footer{
     color:white;
 }
 
-nav{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-nav a{
-    padding:8px 12px;
-    border-radius:8px;
-    transition:0.3s;
-}
-
-nav a:hover{
-    background:white;
-    color:#f38f00;
-}
-
-footer p{
-    margin:5px;
-}
-
-
-/* Banner */
+/* =========================
+   BANNER HOME
+========================= */
 
 .banner{
     background: linear-gradient(135deg,#3e77b6,#5a9be6);
@@ -224,7 +224,9 @@ footer p{
     font-size:18px;
 }
 
-/* Pesquisa */
+/* =========================
+   PESQUISA HOME
+========================= */
 
 .pesquisa{
     margin:40px auto;
@@ -236,7 +238,9 @@ footer p{
     max-width:500px;
 }
 
-/* Categorias */
+/* =========================
+   CATEGORIAS
+========================= */
 
 .categorias{
     display:flex;
@@ -260,10 +264,103 @@ footer p{
     transform:translateY(-5px);
 }
 
-/* Destaques */
+/* =========================
+   PRODUTOS
+========================= */
 
-.titulo-secao{
+.produtos-grid{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:30px;
+    margin-top:30px;
+}
+
+.produto{
+    background:white;
+    width:260px;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
     text-align:center;
+    transition:.3s;
+}
+
+.produto:hover{
+    transform:translateY(-8px);
+}
+
+.produto h3{
     color:#3e77b6;
-    margin:40px 0 20px;
+}
+
+.preco{
+    font-size:22px;
+    color:#f38f00;
+    font-weight:bold;
+}
+
+.estoque{
+    color:green;
+    font-weight:bold;
+}
+
+.estrelas{
+    color:#ffb400;
+    font-size:20px;
+}
+
+.pesquisa-produtos{
+    text-align:center;
+    margin:30px;
+}
+
+.pesquisa-produtos input{
+    width:50%;
+    max-width:500px;
+}
+
+/* =========================
+   LOGIN / CADASTRO (CORRIGIDO)
+========================= */
+
+.auth-container{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 20px;
+}
+
+.auth-card{
+    background:white;
+    width:100%;
+    max-width:420px;
+    padding:35px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    text-align:center;
+}
+
+.auth-card h2{
+    margin-bottom:10px;
+    color:#3e77b6;
+}
+
+.auth-card p{
+    color:#666;
+    margin-bottom:20px;
+}
+
+.auth-card input{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border-radius:10px;
+    border:1px solid #ccc;
+    box-sizing:border-box;
+}
+
+.auth-card button{
+    width:100%;
+    margin-top:10px;
 }

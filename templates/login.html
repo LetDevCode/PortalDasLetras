@@ -1,34 +1,31 @@
 {% extends "base.html" %}
 
-{% block title %}
-Login
-{% endblock %}
-
 {% block content %}
+
+<div class="auth-container">
+
+<div class="auth-card">
 
 <h2>Login</h2>
 
-<form>
+<form method="POST">
 
-<input type="email" placeholder="Email">
+<input type="email" name="email" placeholder="Email">
 
-<input type="password" placeholder="Senha">
+<input type="password" name="senha" placeholder="Senha">
 
-<button>Entrar</button>
+<button type="submit">Entrar</button>
 
 </form>
 
-<p style="text-align:center;">
-Ainda não possui uma conta?
-
-<br><br>
+<p>Não possui conta?</p>
 
 <a href="/cadastro">
-
-<button>Criar Conta</button>
-
+<button>Criar conta</button>
 </a>
 
-</p>
+</div>
+
+</div>
 
 {% endblock %}

@@ -6,18 +6,48 @@ Cadastro
 
 {% block content %}
 
-<h2>Cadastro</h2>
+<div class="auth-container">
+
+<div class="auth-card">
+
+<h2>📝 Cadastro</h2>
+
+<p>
+Crie sua conta no Portal das Letras
+</p>
 
 <form>
 
-<input type="text" placeholder="Nome">
+<input
+type="text"
+placeholder="Nome completo"
+required>
 
-<input type="email" placeholder="Email">
+<input
+type="email"
+placeholder="Email"
+required>
 
-<input type="password" placeholder="Senha">
+<input
+type="password"
+placeholder="Senha"
+required>
 
-<button>Cadastrar</button>
+<input
+type="password"
+placeholder="Confirmar senha"
+required>
+
+<button type="submit">
+
+Cadastrar
+
+</button>
 
 </form>
+
+</div>
+
+</div>
 
 {% endblock %}

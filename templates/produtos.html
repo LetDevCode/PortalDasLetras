@@ -1,73 +1,61 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <title>Livros</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "base.html" %}
 
-<header>
-    <h1>📚 Portal das Letras</h1>
-</header>
+{% block title %}
+Livros
+{% endblock %}
 
-<nav>
-    <a href="/">Home</a>
-    <a href="/produtos">Livros</a>
-    <a href="/sobre">Sobre</a>
-    <a href="/contato">Contato</a>
-    <a href="/login">Login</a>
-    <a href="/cadastro">Cadastro</a>
-    <a href="/admin">Admin</a>
-</nav>
-
-<div class="container">
+{% block content %}
 
 <h2>Catálogo de Livros</h2>
 
-<div class="acoes">
+<div class="pesquisa-produtos">
 
-<a href="/cadastrar_livro">
-<button>➕ Novo Livro</button>
-</a>
+<input
+type="text"
+placeholder="Pesquisar livros...">
 
-<a href="/pesquisar_livro">
-<button>🔍 Pesquisar</button>
+<br><br>
+
+<a href="/admin">
+<button>
+⚙ Administração
+</button>
 </a>
 
 </div>
 
-<table>
-
-<tr>
-<th>ID</th>
-<th>Título</th>
-<th>Autor</th>
-<th>Preço</th>
-</tr>
+<div class="produtos-grid">
 
 {% for livro in livros %}
 
-<tr>
+<div class="produto">
 
-<td>{{ livro.id }}</td>
-<td>{{ livro.titulo }}</td>
-<td>{{ livro.autor }}</td>
-<td>R$ {{ livro.preco }}</td>
+<h3>{{ livro.titulo }}</h3>
 
-</tr>
+<p>
+✍ {{ livro.autor }}
+</p>
 
-{% endfor %}
+<p class="estrelas">
+★★★★★
+</p>
 
-</table>
+<p class="estoque">
+📦 Em estoque
+</p>
+
+<p class="preco">
+R$ {{ livro.preco }}
+</p>
+
+<button>
+🛒 Comprar
+</button>
 
 </div>
 
-<footer>
+{% endfor %}
 
-© 2026 Portal das Letras
+</div>
 
-</footer>
-
-</body>
-</html>
+{% endblock %}
