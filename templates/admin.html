@@ -29,12 +29,32 @@ Painel Administrativo
     <div class="dashboard-card">
         <h3>⭐ Livro Mais Caro</h3>
 
-        <p style="font-size:20px;">
+        <p style="font-size:18px;">
             {% if livro_caro %}
                 {{ livro_caro.titulo }}
             {% else %}
                 Nenhum
             {% endif %}
+        </p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>🪙 Livro Mais Barato</h3>
+
+        <p style="font-size:18px;">
+            {% if livro_barato %}
+                {{ livro_barato.titulo }}
+            {% else %}
+                Nenhum
+            {% endif %}
+        </p>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>💵 Valor Total</h3>
+
+        <p>
+            R$ {{ "%.2f"|format(valor_total) }}
         </p>
     </div>
 
@@ -44,7 +64,7 @@ Painel Administrativo
 
 <h2>📊 Estatísticas do Sistema</h2>
 
-<div class="dashboard-card" style="width:700px; margin:30px auto;">
+<div class="grafico-container">
     <canvas id="graficoLivros"></canvas>
 </div>
 
@@ -98,7 +118,8 @@ Painel Administrativo
         </td>
 
         <td>
-            <a href="/excluir_livro/{{ livro.id }}">
+            <a href="/excluir_livro/{{ livro.id }}"
+               onclick="return confirm('Deseja excluir este livro?')">
                 🗑️
             </a>
         </td>
@@ -113,41 +134,37 @@ Painel Administrativo
 
 setTimeout(function() {
 
-    console.log("Chart:", typeof Chart);
-
     const canvas = document.getElementById("graficoLivros");
 
-    console.log("Canvas:", canvas);
-
-    if (!canvas) {
-        console.error("Canvas não encontrado");
-        return;
-    }
+    if (!canvas) return;
 
     const total = Number("{{ total }}");
     const valorMedio = Number("{{ valor_medio }}");
+    const valorTotal = Number("{{ valor_total }}");
 
     new Chart(canvas, {
 
         type: "bar",
 
         data: {
+
             labels: [
-                "Total de Livros",
-                "Preço Médio"
+                "Total Livros",
+                "Preço Médio",
+                "Valor Total"
             ],
 
             datasets: [{
-                label: "Estatísticas",
-
                 data: [
                     total,
-                    valorMedio
+                    valorMedio,
+                    valorTotal
                 ],
 
                 backgroundColor: [
                     "#3e77b6",
-                    "#f38f00"
+                    "#f38f00",
+                    "#5a9be6"
                 ],
 
                 borderWidth: 1
@@ -155,6 +172,7 @@ setTimeout(function() {
         },
 
         options: {
+
             responsive: true,
 
             plugins: {
@@ -169,6 +187,7 @@ setTimeout(function() {
                 }
             }
         }
+
     });
 
 }, 500);

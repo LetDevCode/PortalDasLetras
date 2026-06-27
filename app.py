@@ -83,17 +83,25 @@ def admin():
 
     total = len(livros)
 
-    valor_total = sum(float(livro["preco"]) for livro in livros)
+    valor_medio = (
+        sum(float(l["preco"]) for l in livros) / total
+        if total > 0 else 0
+    )
 
-    valor_medio = valor_total / total if total > 0 else 0
+    livro_caro = (
+        max(livros, key=lambda x: float(x["preco"]))
+        if livros else None
+    )
 
-    livro_caro = None
+    livro_barato = (
+        min(livros, key=lambda x: float(x["preco"]))
+        if livros else None
+    )
 
-    if livros:
-        livro_caro = max(
-            livros,
-            key=lambda livro: float(livro["preco"])
-        )
+    valor_total = sum(
+        float(l["preco"])
+        for l in livros
+    )
 
     return render_template(
         "admin.html",
@@ -101,7 +109,9 @@ def admin():
         livros=livros,
         total=total,
         valor_medio=valor_medio,
-        livro_caro=livro_caro
+        livro_caro=livro_caro,
+        livro_barato=livro_barato,
+        valor_total=valor_total
     )
 
 
