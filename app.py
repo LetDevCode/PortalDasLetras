@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 
 app = Flask(__name__)
 app.secret_key = "123456"
+usuarios = []
 
 # =========================
 # BANCO EM MEMÓRIA (CRUD)
@@ -45,13 +46,22 @@ def produtos():
 def login():
 
     if request.method == "POST":
-        email = request.form.get("email")
-        senha = request.form.get("senha")
 
-        # login simples (para trabalho)
-        if email and senha:
-            session["usuario"] = email
-            return redirect(url_for("admin"))
+        email = request.form["email"]
+        senha = request.form["senha"]
+
+        for usuario in usuarios:
+
+            if usuario["email"] == email and usuario["senha"] == senha:
+
+                session["usuario"] = usuario["nome"]
+
+                return redirect(url_for("admin"))
+
+        return render_template(
+            "login.html",
+            erro="E-mail ou senha inválidos."
+        )
 
     return render_template("login.html")
 
@@ -66,8 +76,41 @@ def logout():
 # CADASTRO (SÓ VISUAL)
 # =========================
 
-@app.route("/cadastro")
+@app.route("/cadastro", methods=["GET", "POST"])
 def cadastro():
+
+    if request.method == "POST":
+
+        nome = request.form["nome"]
+        email = request.form["email"]
+        senha = request.form["senha"]
+        confirmar = request.form["confirmar"]
+
+        # verifica se as senhas são iguais
+        if senha != confirmar:
+            return render_template(
+                "cadastro.html",
+                erro="As senhas não coincidem."
+            )
+
+        # verifica se email já existe
+        for usuario in usuarios:
+            if usuario["email"] == email:
+                return render_template(
+                    "cadastro.html",
+                    erro="Este e-mail já está cadastrado."
+                )
+
+        # cadastra usuário
+        usuarios.append({
+            "nome": nome,
+            "email": email,
+            "senha": senha
+        })
+         
+        
+        return redirect(url_for("login"))
+
     return render_template("cadastro.html")
 
 
