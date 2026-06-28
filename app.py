@@ -9,11 +9,157 @@ usuarios = []
 # =========================
 
 livros = [
-    {"id": 1, "titulo": "Dom Casmurro", "autor": "Machado de Assis", "preco": "39.90"},
-    {"id": 2, "titulo": "O Pequeno Príncipe", "autor": "Antoine de Saint-Exupéry", "preco": "29.90"},
-    {"id": 3, "titulo": "Harry Potter", "autor": "J. K. Rowling", "preco": "59.90"}
+    {
+        "id": 1,
+        "titulo": "Dom Casmurro",
+        "autor": "Machado de Assis",
+        "preco": "39.90"
+    },
+    {
+        "id": 2,
+        "titulo": "O Pequeno Príncipe",
+        "autor": "Antoine de Saint-Exupéry",
+        "preco": "29.90"
+    },
+    {
+        "id": 3,
+        "titulo": "Harry Potter e a Pedra Filosofal",
+        "autor": "J. K. Rowling",
+        "preco": "59.90"
+    },
+    {
+        "id": 4,
+        "titulo": "O Senhor dos Anéis",
+        "autor": "J. R. R. Tolkien",
+        "preco": "89.90"
+    },
+    {
+        "id": 5,
+        "titulo": "1984",
+        "autor": "George Orwell",
+        "preco": "44.90"
+    },
+    {
+        "id": 6,
+        "titulo": "A Revolução dos Bichos",
+        "autor": "George Orwell",
+        "preco": "34.90"
+    },
+    {
+        "id": 7,
+        "titulo": "Orgulho e Preconceito",
+        "autor": "Jane Austen",
+        "preco": "49.90"
+    },
+    {
+        "id": 8,
+        "titulo": "Percy Jackson e o Ladrão de Raios",
+        "autor": "Rick Riordan",
+        "preco": "54.90"
+    },
+    {
+        "id": 9,
+        "titulo": "A Culpa é das Estrelas",
+        "autor": "John Green",
+        "preco": "39.90"
+    },
+    {
+        "id": 10,
+        "titulo": "Jogos Vorazes",
+        "autor": "Suzanne Collins",
+        "preco": "59.90"
+    },
+    {
+        "id": 11,
+        "titulo": "O Hobbit",
+        "autor": "J. R. R. Tolkien",
+        "preco": "64.90"
+    },
+    {
+        "id": 12,
+        "titulo": "Cem Anos de Solidão",
+        "autor": "Gabriel García Márquez",
+        "preco": "69.90"
+    },
+    {
+        "id": 13,
+        "titulo": "A Menina que Roubava Livros",
+        "autor": "Markus Zusak",
+        "preco": "49.90"
+    },
+    {
+        "id": 14,
+        "titulo": "O Código Da Vinci",
+        "autor": "Dan Brown",
+        "preco": "54.90"
+    },
+    {
+        "id": 15,
+        "titulo": "Crepúsculo",
+        "autor": "Stephenie Meyer",
+        "preco": "39.90"
+    },
+    {
+        "id": 16,
+        "titulo": "As Crônicas de Nárnia",
+        "autor": "C. S. Lewis",
+        "preco": "79.90"
+    },
+    {
+        "id": 17,
+        "titulo": "Memórias Póstumas de Brás Cubas",
+        "autor": "Machado de Assis",
+        "preco": "42.90"
+    },
+    {
+        "id": 18,
+        "titulo": "Capitães da Areia",
+        "autor": "Jorge Amado",
+        "preco": "36.90"
+    },
+    {
+        "id": 19,
+        "titulo": "O Alquimista",
+        "autor": "Paulo Coelho",
+        "preco": "45.90"
+    },
+    {
+        "id": 20,
+        "titulo": "Verity",
+        "autor": "Colleen Hoover",
+        "preco": "57.90"
+    },
+    {
+        "id": 21,
+        "titulo": "É Assim que Acaba",
+        "autor": "Colleen Hoover",
+        "preco": "52.90"
+    },
+    {
+        "id": 22,
+        "titulo": "A Biblioteca da Meia-Noite",
+        "autor": "Matt Haig",
+        "preco": "56.90"
+    },
+    {
+        "id": 23,
+        "titulo": "O Nome do Vento",
+        "autor": "Patrick Rothfuss",
+        "preco": "74.90"
+    },
+    {
+        "id": 24,
+        "titulo": "Duna",
+        "autor": "Frank Herbert",
+        "preco": "84.90"
+    },
+    {
+        "id": 25,
+        "titulo": "A Rainha Vermelha",
+        "autor": "Victoria Aveyard",
+        "preco": "47.90"
+    }
 ]
-
 # =========================
 # PÁGINAS PRINCIPAIS
 # =========================

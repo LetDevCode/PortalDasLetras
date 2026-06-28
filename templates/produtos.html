@@ -6,55 +6,104 @@ Livros
 
 {% block content %}
 
-<h2>Catálogo de Livros</h2>
-
-<div class="pesquisa-produtos">
-
-<input
-type="text"
-placeholder="Pesquisar livros...">
-
-<br><br>
-
-<a href="/admin">
-<button>
-⚙ Administração
-</button>
-</a>
-
-</div>
+<h2>📚 Nosso Catálogo</h2>
 
 <div class="produtos-grid">
 
-{% for livro in livros %}
+    {% for livro in livros %}
 
-<div class="produto">
+    <div class="produto">
 
-<h3>{{ livro.titulo }}</h3>
+        {% if livro.titulo == "Dom Casmurro" %}
+            <img src="{{ url_for('static', filename='images/dom_casmurro.jpg') }}">
 
-<p>
-✍ {{ livro.autor }}
-</p>
+        {% elif livro.titulo == "O Pequeno Príncipe" %}
+            <img src="{{ url_for('static', filename='images/pequeno_principe.jpg') }}">
 
-<p class="estrelas">
-★★★★★
-</p>
+        {% elif livro.titulo == "Harry Potter e a Pedra Filosofal" %}
+            <img src="{{ url_for('static', filename='images/harry_potter.jpg') }}">
 
-<p class="estoque">
-📦 Em estoque
-</p>
+        {% elif livro.titulo == "O Senhor dos Anéis" %}
+            <img src="{{ url_for('static', filename='images/senhor_dos_aneis.jpg') }}">
 
-<p class="preco">
-R$ {{ livro.preco }}
-</p>
+        {% elif livro.titulo == "1984" %}
+            <img src="{{ url_for('static', filename='images/1984.jpg') }}">
 
-<button>
-🛒 Comprar
-</button>
+        {% elif livro.titulo == "A Revolução dos Bichos" %}
+            <img src="{{ url_for('static', filename='images/revolucao_dos_bichos.jpg') }}">
 
-</div>
+        {% elif livro.titulo == "Orgulho e Preconceito" %}
+            <img src="{{ url_for('static', filename='images/orgulho_preconceito.jpg') }}">
 
-{% endfor %}
+        {% elif livro.titulo == "Percy Jackson e o Ladrão de Raios" %}
+            <img src="{{ url_for('static', filename='images/percy_jackson.jpg') }}">
+
+        {% elif livro.titulo == "A Culpa é das Estrelas" %}
+            <img src="{{ url_for('static', filename='images/culpa_estrelas.jpg') }}">
+
+        {% elif livro.titulo == "Jogos Vorazes" %}
+            <img src="{{ url_for('static', filename='images/jogos_vorazes.jpg') }}">
+
+        {% elif livro.titulo == "O Hobbit" %}
+            <img src="{{ url_for('static', filename='images/hobbit.jpg') }}">
+
+        {% elif livro.titulo == "Cem Anos de Solidão" %}
+            <img src="{{ url_for('static', filename='images/cem_anos.jpg') }}">
+
+        {% elif livro.titulo == "A Menina que Roubava Livros" %}
+            <img src="{{ url_for('static', filename='images/menina_roubava.jpg') }}">
+
+        {% elif livro.titulo == "O Código Da Vinci" %}
+            <img src="{{ url_for('static', filename='images/codigo_da_vinci.jpg') }}">
+
+        {% elif livro.titulo == "Crepúsculo" %}
+            <img src="{{ url_for('static', filename='images/crepusculo.jpg') }}">
+
+        {% elif livro.titulo == "As Crônicas de Nárnia" %}
+            <img src="{{ url_for('static', filename='images/narnia.jpg') }}">
+
+        {% elif livro.titulo == "Memórias Póstumas de Brás Cubas" %}
+            <img src="{{ url_for('static', filename='images/bras_cubas.jpg') }}">
+
+        {% elif livro.titulo == "Capitães da Areia" %}
+            <img src="{{ url_for('static', filename='images/capitaes_areia.jpg') }}">
+
+        {% elif livro.titulo == "O Alquimista" %}
+            <img src="{{ url_for('static', filename='images/alquimista.jpg') }}">
+
+        {% elif livro.titulo == "Verity" %}
+            <img src="{{ url_for('static', filename='images/verity.jpg') }}">
+
+        {% elif livro.titulo == "É Assim que Acaba" %}
+            <img src="{{ url_for('static', filename='images/e_assim_que_acaba.jpg') }}">
+
+        {% elif livro.titulo == "A Biblioteca da Meia-Noite" %}
+            <img src="{{ url_for('static', filename='images/biblioteca_meia_noite.jpg') }}">
+
+        {% elif livro.titulo == "O Nome do Vento" %}
+            <img src="{{ url_for('static', filename='images/nome_do_vento.jpg') }}">
+
+        {% elif livro.titulo == "Duna" %}
+            <img src="{{ url_for('static', filename='images/duna.jpg') }}">
+
+        {% elif livro.titulo == "A Rainha Vermelha" %}
+            <img src="{{ url_for('static', filename='images/rainha_vermelha.jpg') }}">
+
+        {% endif %}
+
+        <h3>{{ livro.titulo }}</h3>
+
+        <p>{{ livro.autor }}</p>
+
+        <p class="preco">
+            R$ {{ livro.preco }}
+        </p>
+
+        <button>Comprar</button>
+
+    </div>
+
+    {% endfor %}
 
 </div>
 

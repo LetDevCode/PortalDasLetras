@@ -2,8 +2,10 @@
 <html lang="pt-br">
 
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>
         {% block title %}
@@ -13,6 +15,9 @@
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='style.css') }}">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
 </head>
 
 <body>
@@ -81,23 +86,25 @@
 
     <footer>
 
-    <p>📚 Portal das Letras</p>
+        <p>
+            <strong>📚 Portal das Letras</strong>
+        </p>
 
-    <p>
-        Conhecimento ao alcance de um clique.
-    </p>
+        <p>
+            Onde cada página abre um novo mundo.
+        </p>
 
-    <p>
-        © 2026 Todos os direitos reservados.
-    </p>
+        <p>
+            Sistema desenvolvido para a disciplina
+            de Desenvolvimento Web.
+        </p>
 
-</footer>
+        <p>
+            © 2026 Todos os direitos reservados.
+        </p>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
-
-<script>
-    console.log("Chart carregado:", typeof Chart);
-</script>
+    </footer>
 
 </body>
+
 </html>

@@ -112,17 +112,17 @@ Painel Administrativo
         <td>R$ {{ livro.preco }}</td>
 
         <td>
-            <a href="/editar_livro/{{ livro.id }}">
-                ✏️
-            </a>
-        </td>
+    <a href="/editar_livro/{{ livro.id }}">
+        ✏️
+    </a>
+</td>
 
-        <td>
-            <a href="/excluir_livro/{{ livro.id }}"
-               onclick="return confirm('Deseja excluir este livro?')">
-                🗑️
-            </a>
-        </td>
+<td>
+    <a href="/excluir_livro/{{ livro.id }}"
+       onclick="return confirm('Deseja realmente excluir este livro?')">
+        🗑️
+    </a>
+</td>
 
     </tr>
 
